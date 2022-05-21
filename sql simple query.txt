@@ -1,0 +1,30 @@
+create database batch46 
+use batch46
+create table employee(id int primary key identity, 
+name varchar(50),email varchar(50), mobile varchar(50), salary varchar(50),department varchar(50),
+city varchar(50))
+select * from employee
+insert into employee(name,email, mobile,salary,department,city) values ('prabhakar','tiwari@gmail.com',
+'585625','600','hr','noida'), ('sanay','sanjay@gmail.com','265426','5256','hyh','delhi'),
+('manoj', 'manoj@gmai.com','7607195400','5900', 'bca','lucknow'),('alok','alok@gmail.com','760195400','5000','it recruiter',' bangalore')
+select *from employee where name =  'prabhakar' 
+select top 5 *from employee
+select  max (salary) from employee
+select name,id,salary, mobile from employee where city= 'noida'
+select * from employee where name like 'a%';
+select *  from employee where  salary>= 600 and salary< 5900
+select* from  employee
+alter table employee add gender varchar(50)
+update employee set name  ='deepak' where id like '[2]%'
+update employee set city = 'ayodhya' where id = 4
+select * from employee  order by name 
+select * from employee order by  name desc
+select count(city) mycity from employee where city = 'delhi'
+-------- between--
+select*from employee where salary between 600 and 5000;
+----- Like-- 
+select * from employee where name like 'a%'
+select *from employee where name  like 'd%'
+--- dublicate value distinct use --
+select distinct gender,name , salary from employee 
+select max(salary)from  employee
