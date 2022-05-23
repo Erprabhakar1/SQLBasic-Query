@@ -1,0 +1,27 @@
+create database dbclass21
+use dbclass21
+create table employee(id int primary key identity,name varchar(50),email varchar(50),salary varchar(50))
+insert into employee(name,email,salary) values('prabhalar','tiwari@gmail.com','7000'),
+('sachin','sachin@gmail.com','5000'),('diwarkar','tiwari@gmail.com','4000'),('deepak','tiwari@gmail.com','4000')
+
+create table department(id int primary key identity,name varchar(50),location varchar(50))
+insert into department(name, location) values ('development','mumbai'),('hr','california'),
+('accounting','new york'),('management', 'new delhi')
+
+select * from employee
+select*from department
+------ inner join --
+select employee.name, employee.email, department.location from employee
+inner join
+department  on employee.id=department.id
+-------- left outer join ----
+
+
+select employee.name ,employee.email, employee.salary, department.location,department.name from employee
+left outer join department on employee.id= department.id
+------ right  outer join---
+select employee. name , employee. email, department.location ,department.name from  employee
+right outer join department on employee.id= department .id
+------ full outer join ---
+select  employee.salary,employee.name, department.location,department.id from employee
+full outer join department on employee.id= department.id
